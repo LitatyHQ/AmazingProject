@@ -22,7 +22,9 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Let's get started by running 
+
+$ gem amazingproject
 
 ## Development
 
