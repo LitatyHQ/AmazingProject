@@ -1,14 +1,9 @@
-
 class Api
-    attr_reader :url
-
-    def initialize
-        url = "https://ghibliapi.herokuapp.com"
+    def self.get_data 
+      response = RestClient.get("https://ghibliapi.herokuapp.com/films")
+      film_array = JSON.parse(response)
+      film_array.each do |film|
+        Films.new(film["title"], film["description"], film["director"], film["release_date"], film["rt_score"])
+      end
     end
-
-    def find_by_title(title)
-        responce = RestClient.get("#{url}#{title}")
-        title = JSON.parse(response)
-    end
-
 end
