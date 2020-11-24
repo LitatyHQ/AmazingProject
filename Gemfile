@@ -8,3 +8,4 @@ gem "rspec", "~> 3.0"
 gem 'pry'
 gem 'rest-client'
 gem 'require_all'
+gem 'rainbow', '~> 3.0'
