@@ -1,4 +1,4 @@
-class Cli #this file communicates w/my user, 
+class Cli  
 
   def greeting
     puts " "
@@ -17,7 +17,6 @@ class Cli #this file communicates w/my user,
         films_list 
         menu
     elsif input == "exit"
-        puts " "
         exit_input
     else  
         invalid_entry
@@ -38,13 +37,7 @@ class Cli #this file communicates w/my user,
 
   def film_selection(film)
     a = Films.find_by_name(film)
-    if a
-      display_film(a)
-    elsif "exit"
-      exit_input
-    else
-      invalid_entry
-    end
+    a ? display_film(a) : invalid_entry
   end
 
   def display_film(film)
@@ -52,7 +45,7 @@ class Cli #this file communicates w/my user,
     puts Rainbow("NAME:").color(:lightsteelblue) + Rainbow("#{film.name}").color(:cadetblue)
     puts Rainbow("DIRECTOR:").color(:lightsteelblue) + Rainbow("#{film.director}").color(:violet)
     puts Rainbow("DESCRIPTION:").color(:lightsteelblue) + "#{film.description}"
-    puts Rainbow("RELEASE DATA:").color(:lightsteelblue) + Rainbow("#{film.release_date}").color(:cadetblue)
+    puts Rainbow("RELEASE DATE:").color(:lightsteelblue) + Rainbow("#{film.release_date}").color(:cadetblue)
     puts Rainbow("ROTTEN TOMATOES SCORE:").color(:lightsteelblue) + Rainbow("#{film.rt_score}").color(:violet)
     puts " "
     sleep(0.4)

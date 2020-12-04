@@ -1,5 +1,5 @@
 require "amazingproject/version"
-class Films #where objects are created & stored for my user display
+class Films 
   attr_accessor :name, :description, :director, :release_date, :rt_score
   @@all = []
 
